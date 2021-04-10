@@ -15,7 +15,7 @@ contract('EthSwap', (accounts) => {
 
   before(async () => {
     token = await Token.new()
-    ethSwap = await EthSwap.new()
+    ethSwap = await EthSwap.new(token.address)
     // Transfer all tokens to EthSwap (1 million)
     await token.transfer(ethSwap.address, tokens('1000000'))
   })
